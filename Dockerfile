@@ -1,7 +1,6 @@
 FROM jenkins/jenkins
 
-ARG HOST_UID=1000
-ARG HOST_GID=1000
+ARG HOST_GID=972
 
 USER root
 RUN apt-get -y update && \
@@ -11,7 +10,6 @@ RUN apt-get -y update && \
     apt-get update && \
     apt-get -y install docker-ce docker-ce-cli containerd.io
     
-RUN usermod -u $HOST_UID jenkins
 RUN groupmod -g $HOST_GID docker
 RUN usermod -aG docker jenkins
 
