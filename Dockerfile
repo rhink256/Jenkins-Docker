@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.333
+FROM jenkins/jenkins:lts-jdk11
 
 ARG HOST_GID=972
 
